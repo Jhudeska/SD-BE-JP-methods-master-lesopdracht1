@@ -15,8 +15,21 @@ public class JuniorFive {
         System.out.println(str.toUpperCase());
     }
 
+    public static void capitalizeWord(String word) {
+        // We gebruiken hier de "toUpperCase" methode van String om het woord uit de parameter in hoofdletters te zetten
+        // vervolgens printen we het resultaat naar de console.
+        String result = word.toUpperCase();
+        System.out.println(result);
+    }
+
     public static void main(String[] args) {
         strToUpper("jhudeska");
+
+
+        capitalizeWord("sjaak");
+        capitalizeWord("patat");
+        capitalizeWord("ajax");
+        capitalizeWord("kampioen");
     }
 
 

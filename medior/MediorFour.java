@@ -112,21 +112,27 @@ public class MediorFour {
     // Gebruik daarna een for-loop om elk woord met een "-" toe te voegen aan de basis string
     // Print uiteindelijk de basis-String.
     // Vervolgens kun je deze 2 methodes in de juiste volgorde aanroepen vanuit de main-methode
+    // De methode verwacht een List van Strings in de parameter en returned niks (want we gaan in deze methode printen)
     public static void printNumbers(List<String> numberWords) {
+        // We gebruiken de List.size() methode om in de "arraySize" variable op te slaan hoe lang onze lijst is.
+        // daarna maken we een lege String waaraan we zo (met concatenation) tekst kunnen toevoegen.
+        int arraySize = numberWords.size();
+        String finalString = "";
 
-        String basisString = "";
-        String symbol = "-";
-        for (String str : numberWords){
 
-            if(basisString == ""){
-                basisString = basisString  + str ;
-            }else {
-                basisString = basisString + symbol + str ;
+        // Deze for-loop loopt door de numberWords List heen (dit is een klassieke for-loop, geen "enhanced" for-loop)
+        for (int i = 0; i < numberWords.size(); i++) {
+            // In donderstaant statement wordt elke i-ste item uit de lijst aans de finalString toegevoegd (geconcatineerd).
+            finalString = finalString + numberWords.get(i);
+
+            // Dit if-statement zorgt dat de laatste iteratie van de loop (wanneer i gelijk is aan de arraySize-1) er geen streepje wordt toegevoegd aan de finalString. Bij alle andere iteraties wel.
+            if(i + 1 != arraySize) {
+                finalString = finalString + "-";
             }
         }
 
-        System.out.println(basisString);
-
+        // Als allerlaatste wordt nu de opgebouwde finalString geprint
+        System.out.println(finalString);
     }
 
 }
